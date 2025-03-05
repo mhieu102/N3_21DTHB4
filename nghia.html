@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to This Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            color: white;
+            text-align: center;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            }
+
+            100% {
+                background: linear-gradient(135deg, #acb6e5, #74ebd5);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Phan Hieu Nghia - 2180606572 - 0905257948</h1>
+
+    <script>
+        window.onload = function () {
+            const title = document.querySelector('h1');
+            setTimeout(() => {
+                title.style.opacity = 1;
+            }, 500);
+        };
+    </script>
+</body>
+
+</html>
