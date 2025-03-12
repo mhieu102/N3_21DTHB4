@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Minh Hiếu - CV</title>
+    <style>
+        :root {
+            --primary-color: #74ebd5;
+            --secondary-color: #acb6e5;
+            --text-color: #333;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --section-padding: 20px;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            animation: backgroundAnimation 15s infinite alternate;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            text-align: center;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--primary-color);
+            margin-bottom: 2rem;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin: 0.5rem 0;
+            color: #2c3e50;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .role {
+            font-size: 1.5rem;
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+        
+        .objective {
+            font-style: italic;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: rgba(116, 235, 213, 0.1);
+            border-radius: 5px;
+        }
+        
+        .personal-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(172, 182, 229, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+        
+        .info-item i {
+            font-size: 1.2rem;
+            color: #3498db;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+            padding: var(--section-padding);
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+        }
+        
+        .timeline {
+            position: relative;
+        }
+        
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+        }
+        
+        .timeline-item:after {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 25px;
+            width: 2px;
+            height: calc(100% - 15px);
+            background-color: var(--secondary-color);
+        }
+        
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        
+        .date {
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+        
+        .place {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .position {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .skill {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        
+        .project {
+            background-color: rgba(172, 182, 229, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .project-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .hobby {
+            background-color: rgba(116, 235, 213, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); }
+            100% { background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .personal-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-pic">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1>Nguyễn Minh Hiếu</h1>
+            <div class="role">Thực tập sinh IT</div>
+            <div class="objective">
+                Tôi mong muốn được làm việc ở môi trường lập trình chuyên nghiệp, ở đó tôi
+                có thể phát triển kỹ năng chuyên môn, học hỏi thêm kiến thức lập trình mới để
+                hoàn thành xuất sắc công việc được giao.
+            </div>
+            <div class="personal-info">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>ha247955@gmail.com</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+84 364 039 170</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Thủ Đức, TP. Hồ Chí Minh</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-globe"></i>
+                    <span>2180606138</span>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-facebook"></i>
+                    <a href="https://www.facebook.com/profile.php?id=100015827550235" target="_blank" style="text-decoration: none; color: inherit;">Facebook</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Học Vấn</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">2021 - 2025</div>
+                    <div class="place">Đại học Công Nghệ Thành phố Hồ Chí Minh</div>
+                    <div class="position">Ngành: Công Nghệ Thông Tin</div>
+                    <div>Chuyên Ngành: Công Nghệ Phần Mềm</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-briefcase"></i> Kinh Nghiệm Làm Việc</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">2021 - 2022</div>
+                    <div class="place">SushiBon</div>
+                    <div class="position">Nhân Viên Phục Vụ</div>
+                    <p>
+                        Khi tôi làm công việc này nó mang lại cho tôi nhiều kinh nghiệm quý báu bao
+                        gồm kỹ năng giao tiếp khi làm việc với nhiều tệp khách hàng khác nhau, giúp
+                        tôi lắng nghe, thấu hiểu và phản hồi chuyên nghiệp. Tôi cũng rèn luyện khả
+                        năng giải quyết vấn đề, làm việc nhóm, quản lý thời gian và nâng cao tính kiên
+                        nhẫn, linh hoạt khi đối mặt với các tình huống bất ngờ. Ngoài ra, làm việc trong
+                        ngành này giúp tôi mở rộng hiểu biết về văn hóa và cải thiện kỹ năng tổ chức,
+                        quản lý công việc hiệu quả hơn.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">02/2024 - 03/2024</div>
+                    <div class="place">Trường Đại học Công Nghệ Thành phố Hồ Chí Minh</div>
+                    <div class="position">Thiết Kế Website Đặt Vé Xem Phim</div>
+                    <p>
+                        Khi thực hiện đồ án lập trình website, ngoài các kỹ năng cơ bản như HTML, CSS,
+                        JS, C#, làm việc nhóm và quản lý thời gian, tôi còn rèn luyện thêm các kỹ năng
+                        như thiết kế giao diện người dùng (UI/UX), tư duy hệ thống, tối ưu hóa hiệu
+                        suất, kiểm thử và gỡ lỗi, bảo mật web, làm việc với API, viết tài liệu và giao tiếp
+                        hiệu quả với bạn bè và giảng viên.
+                    </p>
+                    <p><a href="https://github.com/mhieu102/Nhom9_DoAnFinal_Java.git" target="_blank">Github Repository</a></p>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">03/2024 - 06/2024</div>
+                    <div class="place">Trường Đại học Công Nghệ Thành phố Hồ Chí Minh</div>
+                    <div class="position">Thiết Kế Website Bán Hàng Bằng Ngôn Ngữ Java</div>
+                    <p>
+                        Khi làm dự án website bán hàng bằng Java, tôi đã tích lũy kinh nghiệm trong
+                        việc thiết kế và triển khai hệ thống quản lý sản phẩm và đơn hàng, sử dụng
+                        Spring Boot để xây dựng dịch vụ web và APIs và tích hợp các dịch vụ thanh
+                        toán. Tôi cũng cải thiện khả năng tối ưu hóa hiệu suất, xử lý truy vấn cơ sở dữ
+                        liệu và đảm bảo bảo mật thông tin người dùng. Những kinh nghiệm này giúp
+                        tôi hiểu sâu hơn về phát triển ứng dụng web, nâng cao kỹ năng lập trình và
+                        quản lý dự án.
+                    </p>
+                    <p><a href="https://github.com/mhieu102/DO_AN_CO_SO.git" target="_blank">Github Repository</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-project-diagram"></i> Dự Án</h2>
+            <div class="project">
+                <div class="project-title">Thiết Kế Website Đặt Vé Xem Phim</div>
+                <div class="project-meta">
+                    <div><strong>Thời gian:</strong> 03-2024</div>
+                    <div><strong>Số người tham gia:</strong> 3</div>
+                </div>
+                <div><strong>Vị trí:</strong> Front-End</div>
+                <div><strong>Vai trò:</strong> Xây dựng API, chỉnh sửa giao diện website, phát triển chức năng website.</div>
+                <div><strong>Mục đích:</strong> Tạo giao diện thân thiện để người dùng dễ dàng lựa chọn phim và đặt vé.</div>
+                <div><strong>Công nghệ sử dụng:</strong> Mô hình MVC, Ngôn ngữ C#.</div>
+            </div>
+            <div class="project">
+                <div class="project-title">Thiết Kế Website bán truyện</div>
+                <div class="project-meta">
+                    <div><strong>Thời gian:</strong> 06-2024</div>
+                    <div><strong>Số người tham gia:</strong> 3</div>
+                </div>
+                <div><strong>Vị trí:</strong> Lập trình viên Java</div>
+                <div><strong>Vai trò:</strong> Phát triển tính năng theo sự hướng dẫn của leader.</div>
+                <div><strong>Công nghệ sử dụng:</strong> Ngôn ngữ Java.</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-tools"></i> Các Kỹ Năng</h2>
+            <div class="skills">
+                <div class="skill">Ham Học Hỏi</div>
+                <div class="skill">Kỹ Năng Làm Việc Nhóm</div>
+                <div class="skill">Thành Thạo HTML, CSS, JS & C#</div>
+                <div class="skill">Biết Sử Dụng Ngôn Ngữ Java</div>
+                <div class="skill">Sử Dụng Git Trong Dự Án</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-certificate"></i> Chứng Chỉ</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">8-2024</div>
+                    <div class="place">Kỹ Năng Giao Tiếp Và Làm Việc Nhóm</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-trophy"></i> Danh Hiệu và Giải Thưởng</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">03-2024</div>
+                    <div class="place">Đạt danh hiệu: Sinh Viên Tiêu Biểu</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-heart"></i> Sở Thích</h2>
+            <div class="hobbies">
+                <div class="hobby">Lập Trình</div>
+                <div class="hobby">Chơi Thể Thao (Cầu lông, bóng đá,...)</div>
+                <div class="hobby">Nghe nhạc</div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 - Nguyễn Minh Hiếu - Thực tập sinh IT</p>
+        </footer>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Add subtle animations to elements
+            const sections = document.querySelectorAll('.section');
+            
+            const fadeIn = function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            const observer = new IntersectionObserver(fadeIn, {
+                threshold: 0.1
+            });
+            
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(section);
+            });
+        };
+    </script>
+</body>
+</html>

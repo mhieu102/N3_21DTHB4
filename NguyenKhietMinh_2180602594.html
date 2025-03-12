@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Cá Nhân</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffe6f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 40%;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
+            border: 3px solid #ff69b4;
+            transition: 0.3s;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff69b4;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #ff1493;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .info {
+            font-size: 18px;
+            margin: 8px 0;
+            color: #d63384;
+            font-weight: 500;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 10px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="NKM_profile.jpg" alt="Ảnh đại diện" class="profile-img">
+        <h1>Nguyễn Khiết Minh</h1>
+        <p class="info">Đại học: Đại học Công nghệ Tp.HCM</p>
+        <p class="info">Năm sinh: 19/10/2003</p>
+        <p class="info">Quê Quán: An Giang</p>
+        <p class="info">Nơi Ở: TP. Hồ Chí Minh</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/nkm030603" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/nkm030603/" target="_blank">Instagram</a>
+            <a href="https://github.com/QUANGMINH003" target="_blank">GitHub</a>
+        </div>
+    </div>
+</body>
+
+</html>
