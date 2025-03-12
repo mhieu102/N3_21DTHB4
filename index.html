@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Cá Nhân</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Chào Mừng Đến Với Trang Cá Nhân Của Tôi</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Giới Thiệu</a></li>
+                <li><a href="#projects">Dự Án</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about" class="card">
+            <h2>Giới Thiệu</h2>
+            <p>Tôi là <span id="userName">[Tên của bạn]</span>, một <span id="userJob">[nghề nghiệp]</span> với niềm đam
+                mê <span id="userHobby">[sở thích]</span>.</p>
+
+            <h3>Ảnh Đại Diện</h3>
+            <img id="profileImage"
+                src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/11/14/1116365/BILL0208-Compressed.jpg"
+                alt="Ảnh đại diện" class="profile-img">
+
+            <h3>Cập nhật thông tin</h3>
+            <input type="text" id="nameInput" placeholder="Tên của bạn">
+            <input type="text" id="jobInput" placeholder="Nghề nghiệp">
+            <input type="text" id="hobbyInput" placeholder="Sở thích">
+            <button id="saveButton">Lưu</button>
+        </section>
+        <section id="projects" class="card">
+            <h2>Dự Án</h2>
+            <ul>
+                <li><strong>Dự Án 1:</strong> Mô tả ngắn gọn về dự án 1.</li>
+                <li><strong>Dự Án 2:</strong> Mô tả ngắn gọn về dự án 2.</li>
+                <li><strong>Dự Án 3:</strong> Mô tả ngắn gọn về dự án 3.</li>
+            </ul>
+        </section>
+        <section id="contact" class="card">
+            <h2>Liên Hệ</h2>
+            <p>Gửi email đến tôi tại: <a href="phanhieunghia1054@gmail.com">email@example.com</a></p>
+            <p>Link github của tôi: <a href="https://github.com/HieuNghia6572">https://github.com/HieuNghia6572</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 [Tên của bạn]. Tất cả các quyền được bảo lưu.</p>
+    </footer>
+
+    <script>
+        document.getElementById('saveButton').addEventListener('click', function () {
+            const userName = document.getElementById('nameInput').value;
+            const userJob = document.getElementById('jobInput').value;
+            const userHobby = document.getElementById('hobbyInput').value;
+
+            if (userName) document.getElementById('userName').innerText = userName;
+            if (userJob) document.getElementById('userJob').innerText = userJob;
+            if (userHobby) document.getElementById('userHobby').innerText = userHobby;
+
+            document.getElementById('nameInput').value = '';
+            document.getElementById('jobInput').value = '';
+            document.getElementById('hobbyInput').value = '';
+        });
+    </script>
+</body>
+
+</html>
