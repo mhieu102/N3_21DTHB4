@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Cá Nhân</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Chào Mừng Đến Với Trang Cá Nhân Của Tôi</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Giới Thiệu</a></li>
+                <li><a href="#projects">Dự Án</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about" class="card">
+            <h2>Giới Thiệu</h2>
+            <p>Tôi là <span id="userName">Phan Hiếu Nghĩa</span>, một <span id="userJob">Lập Trình Viên</span> với niềm
+                đam
+                mê <span id="userHobby">Lập Trình và Du Lịch</span>.</p>
+
+            <h3>Ảnh Đại Diện</h3>
+            <img id="profileImage"
+                src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/11/14/1116365/BILL0208-Compressed.jpg"
+                alt="Ảnh đại diện" class="profile-img">
+
+            <h3>Thông tin cá nhân</h3>
+            <p>Họ và tên: Phan Hiếu Nghĩa</p>
+            <p>SDT: 0905257948</p>
+            <p>Email: phanhieunghia1054@gmail.com</p>
+
+
+            <h3>Tải ảnh lên</h3>
+            <input type="file" id="imageInput" accept="image/*">
+        </section>
+        <section id="projects" class="card">
+            <h2>Dự Án</h2>
+            <ul>
+                <li><strong>Dự Án 1:</strong> Mô tả ngắn gọn về dự án 1.</li>
+                <li><strong>Dự Án 2:</strong> Mô tả ngắn gọn về dự án 2.</li>
+                <li><strong>Dự Án 3:</strong> Mô tả ngắn gọn về dự án 3.</li>
+            </ul>
+        </section>
+        <section id="contact" class="card">
+            <h2>Liên Hệ</h2>
+            <p>Gửi email đến tôi tại: <a href="mailto:phanhieunghia1054@gmail.com">phanhieunghia1054@gmail.com</a></p>
+            <p>Link github của tôi: <a href="https://github.com/HieuNghia6572">https://github.com/HieuNghia6572</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Hồ Văn A. Tất cả các quyền được bảo lưu.</p>
+    </footer>
+
+    <script>
+        // Tải ảnh từ localStorage
+        document.getElementById('imageInput').addEventListener('change', function () {
+            const file = this.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('profileImage').src = e.target.result;
+                localStorage.setItem('profileImage', e.target.result);
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Tải ảnh từ localStorage khi trang được tải
+        window.onload = function () {
+            if (localStorage.getItem('profileImage')) {
+                document.getElementById('profileImage').src = localStorage.getItem('profileImage');
+            }
+        };
+    </script>
+</body>
+
+</html>
